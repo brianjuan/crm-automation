@@ -1,6 +1,5 @@
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.remote.HideKeyboardStrategy;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
