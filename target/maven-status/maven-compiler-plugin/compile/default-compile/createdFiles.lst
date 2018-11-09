@@ -1,5 +1,7 @@
 constants/URL.class
 pages/WelcomePage.class
-pages/LoginPage.class
+pages/HomePage.class
 constants/Credentials.class
 pages/BasePage.class
+pages/NewContactPage.class
+pages/LoginPage.class
