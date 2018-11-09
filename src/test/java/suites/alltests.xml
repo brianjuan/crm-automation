@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll">
+    <test name="all_crm">
+        <classes>
+            <class name="LoginTest" />
+            <class name="ContactTest" />
+        </classes>
+    </test>
+</suite>
