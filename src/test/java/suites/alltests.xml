@@ -4,7 +4,7 @@
     <test name="all_crm">
         <classes>
             <class name="LoginTest" />
-            <class name="ContactTest" />
+            <!--<class name="ContactTest" />-->
         </classes>
     </test>
 </suite>
