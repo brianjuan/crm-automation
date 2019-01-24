@@ -1,3 +1,5 @@
+package cases;
+
 import org.testng.annotations.Test;
 
 public class ContactTest extends BaseTest {

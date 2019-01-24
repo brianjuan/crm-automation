@@ -1,10 +1,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="TestAll">
+    <listeners>
+        <listener class-name="utils.listeners.TestListener"/>
+    </listeners>
+
     <test name="all_crm">
         <classes>
-            <class name="LoginTest" />
-            <class name="ContactTest" />
+            <class name="cases.LoginTest" />
+            <!--<class name="cases.ContactTest" />-->
         </classes>
     </test>
 </suite>
