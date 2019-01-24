@@ -1,3 +1,5 @@
-/Users/ajuan/Documents/crm-automation/src/test/java/ContactTest.java
-/Users/ajuan/Documents/crm-automation/src/test/java/LoginTest.java
-/Users/ajuan/Documents/crm-automation/src/test/java/BaseTest.java
+/Users/ajuan/Documents/GitProjects/crm-automation/src/test/java/cases/ContactTest.java
+/Users/ajuan/Documents/GitProjects/crm-automation/src/test/java/cases/BaseTest.java
+/Users/ajuan/Documents/GitProjects/crm-automation/src/test/java/utils/extentreports/ExtentManager.java
+/Users/ajuan/Documents/GitProjects/crm-automation/src/test/java/utils/listeners/TestListener.java
+/Users/ajuan/Documents/GitProjects/crm-automation/src/test/java/cases/LoginTest.java

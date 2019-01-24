@@ -11,6 +11,7 @@ public class LoginPage extends BasePage {
     private MobileElement btn_next;
     private MobileElement btn_signin;
 
+
     public LoginPage(MobileDriver driver, WebDriverWait wait){
         super(driver, wait);
     }
