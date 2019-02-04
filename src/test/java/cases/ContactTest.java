@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class ContactTest extends BaseTest {
 
-    @Test
+//    @Test
     public void createContact() {
         welcome_page.clickSkip();
         login_page.clickNext();
