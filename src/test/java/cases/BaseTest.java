@@ -96,4 +96,20 @@ public class BaseTest {
             Assert.fail();
         }
     }
+
+    // Global CRM steps
+    protected void loginToCRM() {
+        welcome_page.clickSkip();
+        login_page.clickSignIn();
+        auth_page.enterUsername("janahbeatriz.intal@infor.com");
+        auth_page.enterPassword("Thinkas1!");
+        auth_page.clickSignIn();
+        auth_page.clickAllow();
+        auth_page.clickAllow();
+
+        driver.launchApp();
+
+        // Validate
+        Assert.assertTrue(home_page.isAtHomePage(), "CRM Home Page is not displayed.");
+    }
 }

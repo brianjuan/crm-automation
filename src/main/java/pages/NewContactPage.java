@@ -8,6 +8,7 @@ import io.appium.java_client.MobileElement;
 
 public class NewContactPage extends BasePage {
     // Fields
+    MobileElement txt_new_contact;
     MobileElement txtfield_firstname;
     MobileElement txtfield_lastname;
     MobileElement txtfield_title;
@@ -25,25 +26,25 @@ public class NewContactPage extends BasePage {
 
     // Actions
     public void enterFirstName(String first_name) {
-        txtfield_firstname = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath(("//XCUIElementTypeApplication[@name=\"Infor iOS CRM\"]/XCUIElementTypeWindow[1]" +
-                "/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeTextField"))));
+        txtfield_firstname = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath(("//XCUIElementTypeTable/XCUIElementTypeCell/XCUIElementTypeTextField[@value=\"Enter First Name\"]"))));
+        txtfield_firstname.click();
         txtfield_firstname.sendKeys(first_name);
     }
 
     public void enterLastName(String last_name) {
-        txtfield_lastname = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath(("//XCUIElementTypeApplication[@name=\"Infor iOS CRM\"]/XCUIElementTypeWindow[1]" +
-                "/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeTextField"))));
+        txtfield_lastname = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath(("//XCUIElementTypeTable/XCUIElementTypeCell/XCUIElementTypeTextField[@value=\"Enter Last Name\"]"))));
+        txtfield_lastname.click();
         txtfield_lastname.sendKeys(last_name);
     }
 
     public void enterTitle(String title) {
-        txtfield_title = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//XCUIElementTypeApplication[@name=\"Infor iOS CRM\"]/XCUIElementTypeWindow[1]" +
-                "/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[3]/XCUIElementTypeTextField")));
+        txtfield_title = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//XCUIElementTypeTable/XCUIElementTypeCell/XCUIElementTypeTextField[@value=\"Enter Title\"]")));
+        txtfield_title.click();
         txtfield_title.sendKeys(title);
 
-        if(driver != null) {
-            driver.hideKeyboard();
-        }
+//        if(driver != null) {
+//            driver.hideKeyboard();
+//        }
     }
 
     public void clickChooseAccount() {
@@ -52,7 +53,8 @@ public class NewContactPage extends BasePage {
     }
 
     public void searchAccount(String account) {
-        searchfield_search = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("Search")));
+        searchfield_search = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//XCUIElementTypeSearchField[@name=\"Search\"]")));
+        searchfield_search.click();
         searchfield_search.sendKeys(account);
     }
 
@@ -68,7 +70,8 @@ public class NewContactPage extends BasePage {
 
     public void enterPhoneNumber(String number) {
         txtfield_phone = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//XCUIElementTypeStaticText[@name=\"Add phone\"]/../preceding-sibling::XCUIElementTypeCell" +
-                "/XCUIElementTypeStaticText[@name=\"Main\"]/preceding-sibling::XCUIElementTypeTextField")));
+                "/XCUIElementTypeTextField[@value=\"Enter Phone Number\"]")));
+        txtfield_phone.click();
         txtfield_phone.sendKeys(number);
     }
 
@@ -78,10 +81,16 @@ public class NewContactPage extends BasePage {
     }
 
     public void enterEmail(String email) {
-        txtfield_phone = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//XCUIElementTypeStaticText[@name=\"Add email\"]/../preceding-sibling::XCUIElementTypeCell" +
-                "/XCUIElementTypeStaticText[@name=\"Main\"]/preceding-sibling::XCUIElementTypeTextField")));
-        txtfield_phone.sendKeys(email);
+        txtfield_email = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//XCUIElementTypeStaticText[@name=\"Add email\"]/../preceding-sibling::XCUIElementTypeCell" +
+                "/XCUIElementTypeTextField[@value=\"Enter Email\"]")));
+        txtfield_email.click();
+        txtfield_email.sendKeys(email);
     }
 
     // Validations
+    public boolean isAtNewContactPage() {
+        txt_new_contact = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath(("//XCUIElementTypeNavigationBar/XCUIElementTypeOther[@name=\"New Contact\"]"))));
+
+        return txt_new_contact.isDisplayed();
+    }
 }
