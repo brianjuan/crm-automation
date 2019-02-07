@@ -7,8 +7,8 @@
 
     <test name="all_crm">
         <classes>
-            <class name="cases.LoginTest" />
-            <!--<class name="cases.ContactTest" />-->
+            <!--<class name="cases.LoginTest" />-->
+            <class name="cases.ContactTest" />
         </classes>
     </test>
 </suite>

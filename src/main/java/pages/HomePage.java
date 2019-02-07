@@ -9,7 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomePage extends BasePage {
 
     // Fields
-    MobileElement navbar_today;
+    MobileElement btn_today;
+    MobileElement btn_settings;
     MobileElement btn_create_new;
     MobileElement btn_contact;
 
@@ -18,6 +19,11 @@ public class HomePage extends BasePage {
     }
 
     // Actions
+    public void clickSettings() {
+        btn_settings = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath(("//XCUIElementTypeButton[@name=\"Icon Square\"]"))));
+        btn_settings.click();
+    }
+
     public void clickCreateNew() {
         btn_create_new = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.AccessibilityId("Create New")));
         btn_create_new.click();
@@ -30,8 +36,8 @@ public class HomePage extends BasePage {
 
     // Validations
     public boolean isAtHomePage() {
-        navbar_today = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath(("//XCUIElementTypeNavigationBar[@name=\"Today\"]"))));
-        System.out.println(navbar_today);
-        return navbar_today.isDisplayed();
+        btn_today = (MobileElement) wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath(("//XCUIElementTypeButton[@name=\"Today\"]"))));
+
+        return btn_today.isDisplayed();
     }
 }
